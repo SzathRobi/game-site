@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
-import styles from "./landing.module.css";
+import styles from "./landing.module.scss";
 
 function Landing({ offsetY }) {
   /*
