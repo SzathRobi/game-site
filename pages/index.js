@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Landing from "../comps/landing/Landing";
+import Header from "../comps/header/Header";
 
 export default function Home() {
   const [offsetY, setOffsetY] = useState(0);
@@ -33,18 +34,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Header />
         <Landing offsetY={offsetY} />
-        <div
-          style={{
-            width: "3rem",
-            height: `${offsetY * 1.2}px`,
-            backgroundColor: "red",
-            position: "absolute",
-            top: 0,
-            left: "calc(50% - 1.5rem)",
-            zIndex: 1,
-          }}
-        ></div>
       </main>
     </div>
   );
