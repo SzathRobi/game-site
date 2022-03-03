@@ -35,7 +35,7 @@ function Landing({ offsetY }) {
         <source src="./bg.mp4" type="video/mp4" />
       </video>
       <div className={styles.container}>
-        <h1 style={titleStyle}>Game Name</h1>
+        <h1 style={titleStyle}>Distopy</h1>
         <div className={styles.btns} style={btnsStyle}>
           <Link href="#">
             <a className={styles.presale}>JOIN PRESALE</a>

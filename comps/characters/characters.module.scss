@@ -1,8 +1,10 @@
 .Characters {
+  max-width: 100vw;
   min-height: 100vh;
   padding: 3rem 0;
   position: relative;
-  //  background-color: rebeccapurple;
+  overflow-x: hidden;
+  background-color: #fff;
 
   h2 {
     text-align: center;

@@ -27,6 +27,17 @@ export default function Home() {
     //////
   }, [offsetY]);*/
 
+  const timeIndicator = {
+    width: "0.5rem",
+    height: "95vh",
+    backgroundColor: "blue",
+    position: "fixed",
+    top: "0",
+    left: "calc(50% - 0.25rem)",
+    borderBottomRightRadius: "3rem",
+    borderBottomLeftRadius: "3rem",
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -35,12 +46,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <Header />
         <Landing offsetY={offsetY} />
         <Characters />
-        <Timeline />
-      </main>
+      </div>
+      <Timeline offsetY={offsetY} />
+      <div style={timeIndicator}></div>
     </div>
   );
 }

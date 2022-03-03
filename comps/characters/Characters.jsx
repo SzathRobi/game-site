@@ -28,12 +28,11 @@ function Characters() {
   return (
     <section className={styles.Characters}>
       <h2>Races</h2>
-      <div className={styles.races} ref={racesRef} onScroll={onScroll}>
-        <Character />
-        <Character />
-        <Character />
-        <Character />
-      </div>
+
+      <Character />
+      <Character />
+      <Character />
+      <Character />
     </section>
   );
 }
