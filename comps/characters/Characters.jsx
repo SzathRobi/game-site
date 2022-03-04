@@ -26,9 +26,8 @@ function Characters() {
     }
   };
   return (
-    <section className={styles.Characters}>
+    <section className={styles.Characters} id="Characters">
       <h2>Races</h2>
-
       <Character />
       <Character />
       <Character />

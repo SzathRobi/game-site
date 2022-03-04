@@ -5,16 +5,16 @@ function Header() {
   return (
     <header className={styles.Header}>
       <nav>
-        <Link href="#">
+        <Link href="#Landing">
           <a>Home</a>
         </Link>
-        <Link href="#">
+        <Link href="#Characters">
           <a>Races</a>
         </Link>
         <Link href="#">
           <a>Statistics</a>
         </Link>
-        <Link href="#">
+        <Link href="#Timeline">
           <a>Roadmap</a>
         </Link>
       </nav>

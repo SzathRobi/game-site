@@ -46,7 +46,7 @@ function Landing({ offsetY }) {
   };
 
   return (
-    <section className={styles.Landing}>
+    <section className={styles.Landing} id="Landing">
       <video ref={ref} autoPlay muted loop id="videoBG">
         <source src="./bg.mp4" type="video/mp4" />
       </video>
