@@ -1,13 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 import styles from "./landing.module.scss";
 
 function Landing({ offsetY }) {
   /*
    *   RESPONSIVENESS :)
    *   ADD INITIAL ANIMATON :(
-   *   ADD PARALLAX SHIT :/
+   *   ADD PARALLAX SHIT :)
    */
+
+  const { ref, inView, entry } = useInView({
+    threshold: 1,
+  });
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      inView ? videoRef.current.stop() : videoRef.current.stop();
+    }
+  }, [inView]);
 
   const titleStyle = {
     transform: `translateY(${offsetY * 0.8}px)`,
@@ -24,16 +39,25 @@ function Landing({ offsetY }) {
     transform: `translate(-50%, ${offsetY * 0.2}px)`,
   };
   const social_3style = {
-    transform: `translate(-50%, ${offsetY * 0.3}px)`,
-  };
-  const social_4style = {
     transform: `translate(-50%, ${offsetY * 0.4}px)`,
   };
+  const social_4style = {
+    transform: `translate(-50%, ${offsetY * 0.3}px)`,
+  };
+
   return (
     <section className={styles.Landing}>
-      <video autoPlay muted loop id="videoBG">
+      <video ref={ref} autoPlay muted loop id="videoBG">
         <source src="./bg.mp4" type="video/mp4" />
       </video>
+      <Image
+        src="/bg.jpg"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="left"
+        alt="game bg"
+        className={styles.bgImg}
+      />
       <div className={styles.container}>
         <h1 style={titleStyle}>Distopy</h1>
         <div className={styles.btns} style={btnsStyle}>

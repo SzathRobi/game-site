@@ -1,0 +1,8 @@
+@import "../../styles/variables";
+
+.Footer {
+  min-height: 3rem;
+  background-color: $color-primary;
+  position: relative;
+  z-index: 10;
+}

@@ -6,6 +6,7 @@ import Landing from "../comps/landing/Landing";
 import Header from "../comps/header/Header";
 import Characters from "../comps/characters/Characters";
 import Timeline from "../comps/timeline/Timeline";
+import Footer from "../comps/footer/footer";
 
 export default function Home() {
   const [offsetY, setOffsetY] = useState(0);
@@ -27,17 +28,6 @@ export default function Home() {
     //////
   }, [offsetY]);*/
 
-  const timeIndicator = {
-    width: "0.5rem",
-    height: "95vh",
-    backgroundColor: "blue",
-    position: "fixed",
-    top: "0",
-    left: "calc(50% - 0.25rem)",
-    borderBottomRightRadius: "3rem",
-    borderBottomLeftRadius: "3rem",
-  };
-
   return (
     <div className={styles.container}>
       <Head>
@@ -52,7 +42,8 @@ export default function Home() {
         <Characters />
       </div>
       <Timeline offsetY={offsetY} />
-      <div style={timeIndicator}></div>
+      <div className={styles.timeIndicator}></div>
+      <Footer />
     </div>
   );
 }

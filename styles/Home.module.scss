@@ -1,7 +1,10 @@
+@import "/styles/variables";
+
 .container video {
-  position: absolute;
   min-width: 100%;
   min-height: 100vh;
+  display: none;
+  position: absolute;
   top: 0;
   left: 0;
 }
@@ -10,4 +13,22 @@
   min-height: 100vh;
   position: relative;
   z-index: 10;
+}
+
+.timeIndicator {
+  width: 0.5rem;
+  height: 95vh;
+  background-color: $color-primary;
+  position: fixed;
+  top: 0;
+  left: calc(50% - 0.25rem);
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  box-shadow: 0 0 2px $color-primary;
+}
+
+@media (min-width: 425px) {
+  .container video {
+    display: block;
+  }
 }

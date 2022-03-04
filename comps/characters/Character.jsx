@@ -8,7 +8,7 @@ function Character() {
   });
 
   const raceStyle = {
-    transition: "600ms",
+    transition: "800ms",
     position: "relative",
     left: inView ? 0 : "-100vw",
     // animationName: inView ? "@slideInFromLeft" : "@slideOutToLeft",
@@ -16,7 +16,7 @@ function Character() {
   };
 
   const contentStyle = {
-    transition: "600ms",
+    transition: "800ms",
     position: "relative",
     right: inView ? 0 : "-100vw",
   };
