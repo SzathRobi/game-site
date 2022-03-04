@@ -6,7 +6,7 @@ import Landing from "../comps/landing/Landing";
 import Header from "../comps/header/Header";
 import Characters from "../comps/characters/Characters";
 import Timeline from "../comps/timeline/Timeline";
-import Footer from "../comps/footer/footer";
+import Footer from "../comps/footer/Footer";
 
 export default function Home() {
   const [offsetY, setOffsetY] = useState(0);
