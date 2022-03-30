@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
+import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 import styles from "./landing.module.scss";
 
 function Landing({ offsetY }) {
@@ -47,7 +47,7 @@ function Landing({ offsetY }) {
 
   return (
     <section className={styles.Landing} id="Landing">
-      <video ref={ref} autoPlay muted loop id="videoBG">
+      <video ref={ref} muted id="videoBG">
         <source src="./bg.mp4" type="video/mp4" />
       </video>
       <Image

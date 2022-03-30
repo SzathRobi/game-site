@@ -1,0 +1,45 @@
+.Characters {
+  background-color: #fff;
+  max-width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  .characterContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: absolute;
+    top: 3rem;
+    .character {
+      .imgContainer {
+        position: relative;
+        //right: 50vw;
+        max-width: 500px;
+        min-height: 500px;
+        transition: 500ms;
+      }
+    }
+
+    .descContainer {
+      transition: 500ms;
+      //position: relative;
+      //left: 50vw;
+    }
+  }
+
+  .btnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    button {
+      width: 6rem;
+      height: 1.75rem;
+    }
+  }
+}

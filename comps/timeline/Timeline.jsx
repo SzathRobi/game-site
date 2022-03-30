@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import Milestone from "./Milestone";
 import styles from "./timeline.module.scss";
 
@@ -9,11 +8,6 @@ function Timeline({ offsetY }) {
       style={{ minHeight: "100vh" }}
       id="Timeline"
     >
-      <Milestone />
-      <Milestone />
-      <Milestone />
-      <Milestone />
-      <Milestone />
       <Milestone />
       <Milestone />
       <Milestone />

@@ -1,8 +1,8 @@
 @import "../../styles/variables";
 
 .Header {
+  padding: 1.25rem 0 1.5rem;
   width: 100%;
-  height: 2.5rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,15 +11,26 @@
   nav {
     width: 100%;
     height: 100%;
-    color: #fff;
+    color: $text-ligth;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    transition: 250ms;
+    //this needs because of the js mobileMenuPos style (checked ? tranform:.....)
+    //Header.js
+    position: relative;
+    right: 12rem;
 
     a {
       position: relative;
       transition: 250ms;
+      text-align: center;
+
+      &:nth-of-type(2) {
+        line-height: 1.25rem;
+        height: 1.25rem;
+      }
 
       &::before {
         content: "";
@@ -36,5 +47,74 @@
         width: 100%;
       }
     }
+    span {
+      font-size: 0.9rem;
+      display: block;
+    }
+  }
+}
+
+.Hamburger {
+  position: relative;
+  cursor: pointer;
+  display: none;
+  .hamburgerLine {
+    width: 2.5rem;
+    height: 0.25rem;
+    margin: 0.35rem;
+    background-color: $text-ligth;
+    transition: 250ms;
+    transform-origin: center right;
+    border-radius: 4px;
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  input:checked ~ .hamburgerLine:nth-of-type(1) {
+    transform: rotate(-40deg) translateY(-0.25rem);
+  }
+
+  input:checked ~ .hamburgerLine:nth-of-type(2) {
+    transform: translateX(7.5rem);
+  }
+
+  input:checked ~ .hamburgerLine:nth-of-type(3) {
+    transform: rotate(40deg) translateY(0.25rem);
+  }
+}
+
+@media (max-width: 450px) {
+  .Header {
+    nav {
+      font-size: 1.25rem;
+      padding: 1rem;
+      background: linear-gradient(-15deg, #151515, #333);
+      width: 15rem;
+      height: 70vh;
+      flex-direction: column;
+      position: absolute;
+      top: 5rem;
+      right: 0;
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+
+      a {
+        width: 100%;
+        text-align: center;
+        &:nth-of-type(2) {
+          line-height: 1.25rem;
+        }
+      }
+      span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .Hamburger {
+    float: right;
+    margin: 1rem;
+    display: block;
   }
 }

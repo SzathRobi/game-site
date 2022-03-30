@@ -28,10 +28,12 @@ function Characters() {
   return (
     <section className={styles.Characters} id="Characters">
       <h2>Races</h2>
-      <Character />
-      <Character />
-      <Character />
-      <Character />
+      <div className={styles.characterContainer}>
+        <Character />
+        <Character />
+        <Character />
+        <Character />
+      </div>
     </section>
   );
 }
