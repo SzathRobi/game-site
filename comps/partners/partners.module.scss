@@ -1,0 +1,102 @@
+.Partners {
+  max-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  top: -5rem;
+  overflow: hidden;
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    left: 0;
+  }
+
+  .partnersGrid {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%) rotateX(60deg) rotateY(0deg)
+      rotateZ(-30deg);
+
+    .partnerCard {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      border-radius: 1rem;
+      box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.75);
+      transform: scale(0);
+
+      &:nth-of-type(1) {
+        animation-delay: 0ms;
+      }
+      &:nth-of-type(2) {
+        animation-delay: 300ms;
+      }
+      &:nth-of-type(3) {
+        animation-delay: 100ms;
+      }
+      &:nth-of-type(4) {
+        animation-delay: 800ms;
+      }
+      &:nth-of-type(5) {
+        animation-delay: 200ms;
+      }
+      &:nth-of-type(6) {
+        animation-delay: 500ms;
+      }
+      &:nth-of-type(7) {
+        animation-delay: 600ms;
+      }
+      &:nth-of-type(8) {
+        animation-delay: 400ms;
+      }
+
+      img {
+        border-radius: 1rem;
+      }
+    }
+    .scaleUp {
+      animation: scaleUp 250ms ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 420px) {
+  .Partners {
+    .partnersGrid {
+      .partnerCard {
+        width: 240px;
+        height: 240px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .Partners {
+    .partnersGrid {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      .partnerCard {
+        width: 280px;
+        height: 280px;
+      }
+    }
+  }
+}

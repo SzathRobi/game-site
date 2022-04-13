@@ -1,0 +1,156 @@
+@import "./styles/variables";
+
+.News {
+  margin-top: 3rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.PostCard {
+  max-width: 400px;
+  border-color: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.25),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.5);
+
+  .imageContainer {
+    padding-bottom: 15rem;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 15rem;
+      object-position: top;
+      object-fit: cover;
+      position: absolute;
+      border-radius: 1rem;
+    }
+  }
+
+  .titleContainer {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    transition: 150ms;
+    cursor: pointer;
+
+    &:focus {
+      color: $color-primary;
+    }
+  }
+
+  .postInfoContainer {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+    display: block;
+    align-items: center;
+    justify-content: center;
+
+    .authorContainer {
+      width: 100%;
+      margin-bottom: 1rem;
+      margin-right: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        vertical-align: middle;
+        border-radius: 1rem;
+      }
+
+      .author {
+        display: inline;
+        vertical-align: middle;
+        color: #555;
+        margin-left: 0.5rem;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+    }
+
+    .dateContainer {
+      color: #555;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        display: inline;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+        color: $color-primary;
+      }
+    }
+  }
+  .excerpt {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    color: #555;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .detailsLinkContainer {
+    text-align: center;
+
+    span {
+      padding: 0.5rem 2rem;
+      background-color: $color-primary;
+      color: $text-ligth;
+      font-size: 1rem;
+      border-radius: 0.75rem;
+      transition: 150ms;
+      cursor: pointer;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+        inset 2px 2px 6px rgba(0, 0, 0, 0.25),
+        inset -2px -2px 4px rgba(0, 0, 0, 0.5);
+
+      &:focus {
+        background-color: $color-primary-hovered;
+        text-shadow: 0 0 2px #fff;
+      }
+    }
+  }
+}
+
+@media (min-width: 425px) {
+  .News {
+    padding: 1rem 3rem;
+  }
+  .PostCard {
+    .titleContainer {
+      &:hover {
+        color: $color-primary;
+      }
+    }
+    .postInfoContainer {
+      display: flex;
+
+      .authorContainer {
+        width: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .detailsLinkContainer {
+    span {
+      &:hover {
+        background-color: $color-primary-hovered;
+        text-shadow: 0 0 2px #fff;
+      }
+    }
+  }
+}

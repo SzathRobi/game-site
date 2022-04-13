@@ -35,7 +35,7 @@ function Header() {
         <Link href="#Roadmap">
           <a>Roadmap</a>
         </Link>
-        <Link href="/News">
+        <Link href="/news">
           <a>News</a>
         </Link>
       </nav>
