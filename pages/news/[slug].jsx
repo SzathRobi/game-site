@@ -78,50 +78,44 @@ function PostDetails({ post }) {
     <section className={styles.PostDetailsPage}>
       <div className={styles.PostDetails}>
         <div className={styles.imageContainer}>
-          <img
-            src={post.featuredImage.url}
-            layout="fill"
-            objectFit="cover"
-            alt=""
-          />
+          <img src={post.featuredImage.url} layout="fill" alt="image" />
         </div>
-        <div className="px-4 lg:px-0">
-          <div className={styles.subInfoContainer}>
-            <div className={styles.authorContainer}>
-              <img
-                alt={post.author.name}
-                height={30}
-                width={30}
-                src={post.author.photo.url}
-              />
-              <p className={styles.authorName}>{post.author.name}</p>
-            </div>
-            <div className={styles.dateContainer}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              <span className="align-middle">{formatDate(post.createdAt)}</span>
-            </div>
-          </div>
-          <h1 className={styles.title}>{post.title}</h1>
-          {post.content.raw.children.map((typeObj, index) => {
-            const children = typeObj.children.map((item, itemindex) =>
-              getContentFragment(itemindex, item.text, item)
-            );
 
-            return getContentFragment(index, children, typeObj, typeObj.type);
-          })}
+        <div className={styles.subInfoContainer}>
+          <div className={styles.authorContainer}>
+            <img
+              alt={post.author.name}
+              height={30}
+              width={30}
+              src={post.author.photo.url}
+            />
+            <p className={styles.authorName}>{post.author.name}</p>
+          </div>
+          <div className={styles.dateContainer}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            <span className="align-middle">{formatDate(post.createdAt)}</span>
+          </div>
         </div>
+        <h1 className={styles.title}>{post.title}</h1>
+        {post.content.raw.children.map((typeObj, index) => {
+          const children = typeObj.children.map((item, itemindex) =>
+            getContentFragment(itemindex, item.text, item)
+          );
+
+          return getContentFragment(index, children, typeObj, typeObj.type);
+        })}
       </div>
     </section>
   );
