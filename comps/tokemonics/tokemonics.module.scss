@@ -1,0 +1,42 @@
+.Tokemonics {
+  min-height: 100vh;
+  position: relative;
+  top: -10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .imageContainer {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (min-width: 767px) {
+  .Tokemonics {
+    .imageContainer {
+      width: 450px;
+      height: 450px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .Tokemonics {
+    flex-direction: row;
+
+    .imageContainer {
+      width: 425px;
+      height: 425px;
+
+      &:nth-child(1) {
+        transform: translateY(-7.5rem);
+      }
+      &:nth-child(2) {
+        transform: translateY(7.5rem);
+      }
+    }
+  }
+}

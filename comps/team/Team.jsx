@@ -5,7 +5,7 @@ import styles from "./team.module.scss";
 
 function Team() {
   return (
-    <section className={styles.Team}>
+    <section className={styles.Team} id="team">
       <h1>Our Team</h1>
       <div className={styles.cardContainer}>
         {teamData &&

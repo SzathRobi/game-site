@@ -23,16 +23,16 @@ function Header() {
         <Link href="https://bence-vereb.gitbook.io/whitepaper/">
           <a target="blank">Wiki</a>
         </Link>
-        <Link href="#TheGame">
-          <a>TheGame</a>
+        <Link href="#theGame">
+          <a>The Game</a>
         </Link>
-        <Link href="#Tokemonics">
+        <Link href="#tokemonics">
           <a>Tokemonics</a>
         </Link>
-        <Link href="#Team">
+        <Link href="#team">
           <a>Team</a>
         </Link>
-        <Link href="#Roadmap">
+        <Link href="#roadmap">
           <a>Roadmap</a>
         </Link>
         <Link href="/news">

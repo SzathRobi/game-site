@@ -4,7 +4,7 @@ import styles from "./gameInfo.module.scss";
 
 function GameInfo() {
   return (
-    <section className={styles.GameInfo}>
+    <section className={styles.GameInfo} id="theGame">
       <div className={styles.topContainer}>
         <Image
           src="/images/game/game-1.jpg"

@@ -11,6 +11,7 @@ import CharactersSlider from "../comps/charactersSlider/CharactersSlider";
 import Team from "../comps/team/Team";
 import Partners from "../comps/partners/Partners";
 import GameInfo from "../comps/gameInfo/GameInfo";
+import Tokemonics from "../comps/tokemonics/Tokemonics";
 
 function Home({ buildTimestamp }) {
   console.log({ buildTimestamp });
@@ -45,6 +46,7 @@ function Home({ buildTimestamp }) {
       <div className={styles.main}>
         <Landing offsetY={offsetY} />
         <GameInfo />
+        <Tokemonics />
         <Partners />
         <Team />
         {/*<CharactersSlider />

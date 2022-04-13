@@ -5,6 +5,19 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background-color: $color-primary;
+    z-index: 5;
+    animation: colorChanger 10s ease-in-out infinite;
+    box-shadow: 0 0 10px $color-primary;
+  }
 }
 
 .bgImg {
@@ -62,5 +75,14 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+  }
+}
+
+@keyframes colorChanger {
+  0% {
+    filter: hue-rotate(0);
+  }
+  100% {
+    filter: hue-rotate(360deg);
   }
 }
