@@ -51,14 +51,13 @@ function Landing({ offsetY }) {
         <source src="./bg.mp4" type="video/mp4" />
   </video>*/}
       <Image
-        src="/bg.jpg"
+        src="/bg-min.jpg"
         layout="fill"
         objectFit="cover"
         objectPosition="left"
         alt="game bg"
         className={styles.bgImg}
-        priority
-        placeholder="blur"
+        //priority
       />
       <div className={styles.container}>
         <h1 style={titleStyle}>Distopy</h1>

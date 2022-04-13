@@ -14,6 +14,7 @@ function TeamCard({ teamMember }) {
           alt={teamMember.name}
         />
       </div>
+      <h4>Jane Smith Doe</h4>
       <div className={styles.roleContainer}>
         <FaPenNib />
         <p>{teamMember.role}</p>
