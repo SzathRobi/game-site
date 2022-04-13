@@ -8,7 +8,12 @@ export default function News({ posts }) {
       {posts.map((post, index) => (
         <PostCard key={index} post={post} />
       ))}
-      <PostCard post={posts[1]} />
+      {posts.map((post, index) => (
+        <PostCard key={index} post={post} />
+      ))}
+      {posts.map((post, index) => (
+        <PostCard key={index} post={post} />
+      ))}
     </div>
   );
 }

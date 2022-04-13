@@ -1,7 +1,7 @@
 @import "./styles/variables";
 
 .News {
-  margin-top: 3rem;
+  margin-top: 5rem;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -100,6 +100,7 @@
     color: #555;
     text-align: center;
     font-size: 1rem;
+    min-height: 70px;
   }
 
   .detailsLinkContainer {

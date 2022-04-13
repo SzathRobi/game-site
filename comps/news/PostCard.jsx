@@ -3,7 +3,15 @@ import Image from "next/image";
 import moment from "moment";
 import { grpahCMSImageLoader } from "../../util";
 import styles from "../../styles/news.module.scss";
+import { useEffect, useState } from "react";
 function PostCard({ post }) {
+  const [excerpt, setExcerpt] = useState(post.node.excerpt);
+  useEffect(() => {
+    if (excerpt.length > 80) {
+      setExcerpt(excerpt.slice(0, 80) + "...");
+    }
+  }, [excerpt]);
+
   return (
     <div className={styles.PostCard}>
       {/* <div className="relative shadow-md inline-block w-full h-60 lg:h-80 mb-6">
@@ -21,7 +29,7 @@ function PostCard({ post }) {
       </div>
 
       <h1 className={styles.titleContainer}>
-        <Link href={`/post/${post.node.slug}`}>{post.node.title}</Link>
+        <Link href={`/news/${post.node.slug}`}>{post.node.title}</Link>
       </h1>
       <div className={styles.postInfoContainer}>
         <div className={styles.authorContainer}>
@@ -53,7 +61,7 @@ function PostCard({ post }) {
           <span>{moment(post.node.createdAt).format("MMM DD, YYYY")}</span>
         </div>
       </div>
-      <p className={styles.excerpt}>{post.node.excerpt}</p>
+      <p className={styles.excerpt}>{excerpt}</p>
       <div className={styles.detailsLinkContainer}>
         <Link href={`/post/${post.node.slug}`}>
           <span>Continue Reading</span>

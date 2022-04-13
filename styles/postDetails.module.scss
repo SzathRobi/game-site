@@ -1,0 +1,106 @@
+@import "../styles/variables";
+
+.PostDetailsPage {
+  position: relative;
+  max-width: 100vw;
+  padding: 8rem 1rem 2rem;
+
+  .h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .p {
+    margin-bottom: 2rem;
+  }
+
+  .image {
+    margin-bottom: 1rem;
+  }
+
+  .PostDetails {
+    background-color: #333;
+    box-sizing: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+  }
+
+  .imageContainer {
+    position: relative;
+    overflow: hidden;
+    //box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+    //"object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+    }
+  }
+
+  .subInfoContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .authorContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      object-position: center;
+      border-radius: 50%;
+    }
+
+    .authorName {
+      display: inline;
+      text-align: center;
+      margin-left: 1rem;
+    }
+  }
+
+  .dateContainer {
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: inline;
+      margin-right: 0.5rem;
+      color: $color-primary;
+    }
+
+    span {
+      text-align: center;
+    }
+  }
+
+  .title {
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-align: center;
+  }
+}
