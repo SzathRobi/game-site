@@ -12,7 +12,8 @@ import Team from "../comps/team/Team";
 import Partners from "../comps/partners/Partners";
 import GameInfo from "../comps/gameInfo/GameInfo";
 
-export default function Home() {
+function Home({ buildTimestamp }) {
+  console.log({ buildTimestamp });
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -54,3 +55,13 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps = () => {
+  return {
+    props: {
+      buildTimestamp: Date.now(),
+    },
+  };
+};
+
+export default Home;

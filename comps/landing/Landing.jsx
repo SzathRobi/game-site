@@ -47,9 +47,9 @@ function Landing({ offsetY }) {
 
   return (
     <section className={styles.Landing} id="Landing">
-      <video ref={ref} muted id="videoBG">
+      {/*<video ref={ref} muted id="videoBG">
         <source src="./bg.mp4" type="video/mp4" />
-      </video>
+  </video>*/}
       <Image
         src="/bg.jpg"
         layout="fill"
@@ -57,6 +57,8 @@ function Landing({ offsetY }) {
         objectPosition="left"
         alt="game bg"
         className={styles.bgImg}
+        priority
+        placeholder="blur"
       />
       <div className={styles.container}>
         <h1 style={titleStyle}>Distopy</h1>
