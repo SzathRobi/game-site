@@ -87,6 +87,35 @@
 
     .infoContainer {
       transform: translate(-50%, -40%) rotate(3deg);
+
+      h4 {
+        transform: translateY(3rem);
+        opacity: 0;
+      }
+      h5 {
+        transform: translateY(3rem);
+        opacity: 0;
+        animation-delay: 120ms;
+      }
+      p {
+        transform: translateY(3rem);
+        opacity: 0;
+        animation-delay: 240ms;
+      }
+    }
+
+    .firstInView {
+      h4,
+      h5,
+      p {
+        animation: fadeUp 300ms ease-out forwards;
+      }
+      h5 {
+        animation-delay: 120ms;
+      }
+      p {
+        animation-delay: 240ms;
+      }
     }
   }
 
@@ -126,10 +155,22 @@
       li {
         margin: 2rem 0;
         padding: 0 0.25rem 0.25rem;
-        border-bottom: 1px solid #fff;
+        //border-bottom: 1px solid #fff;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 100%;
+          height: 1px;
+          background-color: #fff;
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          // animation: 10s ease-in-out infinite;
+        }
 
         svg {
           font-size: 1.5rem;
@@ -192,6 +233,17 @@
   }
   100% {
     filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
   }
 }
 

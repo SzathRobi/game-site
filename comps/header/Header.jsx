@@ -3,7 +3,7 @@ import Link from "next/link";
 import Hamburger from "./Hamburger";
 import styles from "./header.module.scss";
 
-function Header() {
+function Header({ page = "home" }) {
   const [checked, setChecked] = useState(false);
   const mobileMenuPos = {
     transform: `translateX(${checked ? 0 : 15}rem)`,
@@ -12,7 +12,7 @@ function Header() {
     <header className={styles.Header}>
       <Hamburger checked={checked} setChecked={setChecked} />
       <nav style={mobileMenuPos}>
-        <Link href="#Landing">
+        <Link href={page === "home" ? "#Landing" : "/"}>
           <a>Home</a>
         </Link>
 
@@ -23,16 +23,16 @@ function Header() {
         <Link href="https://bence-vereb.gitbook.io/whitepaper/">
           <a target="blank">Wiki</a>
         </Link>
-        <Link href="#theGame">
+        <Link href={page === "home" ? "#theGame" : "/#theGame"}>
           <a>The Game</a>
         </Link>
-        <Link href="#tokemonics">
+        <Link href={page === "home" ? "#tokemonics" : "/#tokemonics"}>
           <a>Tokemonics</a>
         </Link>
-        <Link href="#team">
+        <Link href={page === "home" ? "#team" : "/#team"}>
           <a>Team</a>
         </Link>
-        <Link href="#roadmap">
+        <Link href={page === "home" ? "#roadmap" : "/#roadmap"}>
           <a>Roadmap</a>
         </Link>
         <Link href="/news">

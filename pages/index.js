@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import Landing from "../comps/landing/Landing";
 import Header from "../comps/header/Header";
 //import Characters from "../comps/characters/Characters";
-import Timeline from "../comps/timeline/Timeline";
-import Footer from "../comps/footer/Footer";
-import CharactersSlider from "../comps/charactersSlider/CharactersSlider";
+//import Timeline from "../comps/timeline/Timeline";
+//import CharactersSlider from "../comps/charactersSlider/CharactersSlider";
 import Team from "../comps/team/Team";
 import Partners from "../comps/partners/Partners";
 import GameInfo from "../comps/gameInfo/GameInfo";
 import Tokemonics from "../comps/tokemonics/Tokemonics";
 
 function Home({ buildTimestamp }) {
-  console.log({ buildTimestamp });
+  //console.log({ buildTimestamp });
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -43,6 +41,7 @@ function Home({ buildTimestamp }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header page="home" />
       <div className={styles.main}>
         <Landing offsetY={offsetY} />
         <GameInfo />

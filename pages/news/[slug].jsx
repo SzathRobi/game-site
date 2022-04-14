@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { getPosts, getPostDetails } from "../../services/index";
 import styles from "../../styles/postDetails.module.scss";
+import Header from "../../comps/header/Header";
 /*import {
   PostDetail,
   Categories,
@@ -76,6 +77,7 @@ function PostDetails({ post }) {
 
   return (
     <section className={styles.PostDetailsPage}>
+      <Header page="news" />
       <div className={styles.PostDetails}>
         <div className={styles.imageContainer}>
           <img src={post.featuredImage.url} layout="fill" alt="image" />

@@ -1,8 +1,30 @@
 import Image from "next/image";
 import { FaHeart, FaBeer, FaSun, FaMoon, FaFan } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 import styles from "./gameInfo.module.scss";
 
 function GameInfo() {
+  const [firstCardRef, firstCardInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const [secondCardRef, secondCardInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const [thirdCardRef, thirdCardInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    console.log({ firstCardInView });
+    console.log({ secondCardInView });
+  }, [firstCardInView, secondCardInView]);
+
   return (
     <section className={styles.GameInfo} id="theGame">
       <div className={styles.topContainer}>
@@ -12,7 +34,12 @@ function GameInfo() {
           objectFit="cover"
           alt=""
         />
-        <div className={styles.infoContainer}>
+        <div
+          ref={firstCardRef}
+          className={`${styles.infoContainer} ${
+            firstCardInView && styles.firstInView
+          }`}
+        >
           <h4>Some Title</h4>
           <h5>Some SubTitle</h5>
           <p>
@@ -33,10 +60,10 @@ function GameInfo() {
           objectFit="cover"
           alt=""
         />
-        <div className={styles.infoContainer}>
+        <div ref={secondCardRef} className={styles.infoContainer}>
           <h4>Some Title</h4>
           <ul>
-            <li>
+            <li className="li">
               <p>Some Stuff 1</p>
               <FaFan />
             </li>
@@ -72,7 +99,7 @@ function GameInfo() {
           objectFit="cover"
           alt=""
         />
-        <div className={styles.infoContainer}>
+        <div ref={thirdCardRef} className={styles.infoContainer}>
           <h4>Some Title</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt

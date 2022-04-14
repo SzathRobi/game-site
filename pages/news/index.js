@@ -1,3 +1,4 @@
+import Header from "../../comps/header/Header";
 import PostCard from "../../comps/news/PostCard";
 import { getPosts } from "../../services";
 import styles from "../../styles/news.module.scss";
@@ -5,6 +6,7 @@ import styles from "../../styles/news.module.scss";
 export default function News({ posts }) {
   return (
     <div className={styles.News}>
+      <Header page="news" />
       {posts.map((post, index) => (
         <PostCard key={index} post={post} />
       ))}
