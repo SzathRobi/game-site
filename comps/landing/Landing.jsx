@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 import styles from "./landing.module.scss";
+import Title from "./Title";
 
 function Landing({ offsetY }) {
   /*
@@ -60,7 +61,7 @@ function Landing({ offsetY }) {
         //priority
       />
       <div className={styles.container}>
-        <h1 style={titleStyle}>Distopy</h1>
+        <Title />
         <div className={styles.btns} style={btnsStyle}>
           <Link href="#">
             <a className={styles.presale}>JOIN PRESALE</a>

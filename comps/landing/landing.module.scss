@@ -22,6 +22,7 @@
 
 .bgImg {
   opacity: 1;
+  filter: brightness(80%);
 }
 
 .container {
@@ -38,6 +39,18 @@
     position: absolute;
     top: 20vh;
     left: 0;
+  }
+
+  svg {
+    transform: translateY(2rem);
+  }
+
+  svg text {
+    stroke: #fff;
+    font-size: 130px;
+    font-weight: 700;
+    stroke-width: 5;
+    animation: textAnimation 5s ease-in-out forwards;
   }
 
   .btns {
@@ -84,5 +97,20 @@
   }
   100% {
     filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dasharray: 0 50%;
+    fill: "";
+  }
+  90% {
+    stroke-dasharray: 45% 5%;
+    fill: "";
+  }
+  100% {
+    stroke-dasharray: 50% 0;
+    fill: $color-primary;
   }
 }
