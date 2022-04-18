@@ -61,7 +61,9 @@ function Landing({ offsetY }) {
         //priority
       />
       <div className={styles.container}>
-        <Title style={titleStyle} />
+        <h1>
+          <Title style={titleStyle} />
+        </h1>
         <div className={styles.btns} style={btnsStyle}>
           <Link href="#">
             <a className={styles.presale}>JOIN PRESALE</a>

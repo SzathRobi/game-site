@@ -20,11 +20,6 @@ function GameInfo() {
     threshold: 0.5,
   });
 
-  useEffect(() => {
-    console.log({ firstCardInView });
-    console.log({ secondCardInView });
-  }, [firstCardInView, secondCardInView]);
-
   return (
     <section className={styles.GameInfo} id="theGame">
       <div className={styles.topContainer}>
@@ -60,7 +55,12 @@ function GameInfo() {
           objectFit="cover"
           alt=""
         />
-        <div ref={secondCardRef} className={styles.infoContainer}>
+        <div
+          ref={secondCardRef}
+          className={`${styles.infoContainer} ${
+            secondCardInView && styles.secondInView
+          }`}
+        >
           <h4>Some Title</h4>
           <ul>
             <li className="li">
@@ -99,7 +99,12 @@ function GameInfo() {
           objectFit="cover"
           alt=""
         />
-        <div ref={thirdCardRef} className={styles.infoContainer}>
+        <div
+          ref={thirdCardRef}
+          className={`${styles.infoContainer} ${
+            thirdCardInView && styles.thirdInView
+          }`}
+        >
           <h4>Some Title</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt

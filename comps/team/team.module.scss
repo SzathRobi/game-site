@@ -3,6 +3,7 @@
 .Team {
   position: relative;
   padding: 2rem;
+  margin-bottom: 5rem;
 
   h1 {
     text-align: center;
@@ -32,17 +33,16 @@
   border-radius: 0.75rem;
   color: #fff;
 
-  &::before {
-    content: "";
+  .decor {
     position: absolute;
     top: -2px;
     left: -2px;
     bottom: -2px;
     right: -2px;
     background: linear-gradient(-45deg, $color-primary-hovered, $color-primary);
-    transform: skew(2deg, 2deg);
     z-index: -1;
     border-radius: 0.75rem;
+    transition: 300ms;
     // animation: colorChanger 10s ease-in-out infinite;
   }
 

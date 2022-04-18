@@ -11,6 +11,29 @@
     position: relative;
     width: 300px;
     height: 300px;
+
+    img {
+      transform: translateY(3rem);
+      opacity: 0;
+    }
+  }
+
+  .firstDiagramInView,
+  .secondDiagramInView {
+    img {
+      animation: fadeUp 300ms ease-out forwards;
+    }
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
   }
 }
 

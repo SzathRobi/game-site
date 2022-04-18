@@ -160,34 +160,78 @@
         align-items: center;
         justify-content: space-between;
         position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid #fff;
 
-        &::before {
-          content: "";
-          width: 100%;
-          height: 1px;
-          background-color: #fff;
-          position: absolute;
-          bottom: -1px;
-          left: 0;
-          // animation: 10s ease-in-out infinite;
+        p {
+          transform: translateY(3rem);
+          transition: 250ms;
         }
 
         svg {
           font-size: 1.5rem;
+          transform: translateY(3rem);
+          transition: 250ms;
+        }
+
+        .decorImageContainer {
+          width: 300px;
+          height: 300px;
+          z-index: -2;
+          left: -12rem;
+          top: 40%;
+          transform: rotate(-7.5deg);
+
+          &:nth-of-type(2) {
+            left: 22rem;
+            transform: rotate(20deg);
+          }
+        }
+      }
+    }
+    .secondInView {
+      p,
+      svg {
+        animation: fadeUp 300ms ease-out forwards;
+      }
+
+      svg {
+        animation-delay: 120ms;
+      }
+
+      li:nth-of-type(2) {
+        p {
+          animation-delay: 240ms;
+        }
+        svg {
+          animation-delay: 360ms;
         }
       }
 
-      .decorImageContainer {
-        width: 300px;
-        height: 300px;
-        z-index: -2;
-        left: -12rem;
-        top: 40%;
-        transform: rotate(-7.5deg);
+      li:nth-of-type(3) {
+        p {
+          animation-delay: 480ms;
+        }
+        svg {
+          animation-delay: 600ms;
+        }
+      }
 
-        &:nth-of-type(2) {
-          left: 22rem;
-          transform: rotate(20deg);
+      li:nth-of-type(4) {
+        p {
+          animation-delay: 720ms;
+        }
+        svg {
+          animation-delay: 840ms;
+        }
+      }
+
+      li:nth-of-type(5) {
+        p {
+          animation-delay: 960ms;
+        }
+        svg {
+          animation-delay: 1080ms;
         }
       }
     }
@@ -215,6 +259,13 @@
     h4 {
       font-size: 2rem;
       margin-bottom: 2rem;
+      transform: translateY(3rem);
+      opacity: 0;
+    }
+
+    p {
+      transform: translateY(3rem);
+      opacity: 0;
     }
 
     .decorImageContainer {
@@ -223,6 +274,17 @@
       z-index: 5;
       right: 10%;
       top: 8rem;
+    }
+
+    .thirdInView {
+      h4,
+      p {
+        animation: fadeUp 300ms ease-out forwards;
+      }
+
+      p {
+        animation-delay: 120ms;
+      }
     }
   }
 }

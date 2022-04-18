@@ -114,3 +114,11 @@
     fill: $color-primary;
   }
 }
+
+@media (min-width: 1024px) {
+  .container {
+    h1 {
+      top: 0vh;
+    }
+  }
+}
