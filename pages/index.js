@@ -10,6 +10,7 @@ import Team from "../comps/team/Team";
 import Partners from "../comps/partners/Partners";
 import GameInfo from "../comps/gameInfo/GameInfo";
 import Tokemonics from "../comps/tokemonics/Tokemonics";
+import Roadmap from "../comps/roadmap/Roadmap";
 
 function Home({ buildTimestamp }) {
   //console.log({ buildTimestamp });
@@ -48,6 +49,7 @@ function Home({ buildTimestamp }) {
         <Tokemonics />
         <Partners />
         <Team />
+        <Roadmap />
         {/*<CharactersSlider />
 
         <Timeline offsetY={offsetY} />
