@@ -1,27 +1,55 @@
+import Link from "next/link";
 import styles from "./footer.module.scss";
 
 function Footer() {
   return (
     <footer className={styles.Footer}>
       <ul>
-        <li>Home</li>
         <li>
-          Marketplace <br />
-          <span>(coming soon)</span>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
         </li>
-        <li>Wiki</li>
-        <li>The Game</li>
-        <li>Tokemonics</li>
-        <li>Team</li>
-        <li>Roadmap</li>
-        <li>News</li>
+        <li>
+          <Link href="/#story">
+            <a>Story</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/#tokemonics">
+            <a>Tokemonics</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/team">
+            <a>Team</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/#roadmap">
+            <a>Roadmap</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/#whitepaper">
+            <a>Whitepaper</a>
+          </Link>
+        </li>
       </ul>
       <ul>
         <li>FAQ</li>
-        <li>White Paper</li>
+        <li>
+          <a href="https://bence-vereb.gitbook.io/whitepaper/" target="blank">
+            Wiki
+          </a>
+        </li>
         <li>Privacy Policy</li>
         <li>Term Of Use</li>
-        <li>Partners</li>
+        <li>
+          <Link href="/#partners">
+            <a>Partners</a>
+          </Link>
+        </li>
       </ul>
       <ul>
         <li>Social Medias</li>

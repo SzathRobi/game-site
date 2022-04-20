@@ -3,11 +3,11 @@
 .Team {
   position: relative;
   padding: 2rem;
-  margin-bottom: 5rem;
+  margin: 5rem 0;
 
   h1 {
     text-align: center;
-    margin: 1rem 0 3rem;
+    margin: 1rem 0 5rem;
   }
 
   .cardContainer {
@@ -20,18 +20,14 @@
 
 .TeamCard {
   position: relative;
-  padding: 1.5rem 0.25rem;
   max-width: 350px;
   // height: 400px;
-  background-color: #060c21;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  border: 1px solid #000;
-  border-radius: 0.75rem;
-  color: #fff;
 
   .decor {
     position: absolute;
@@ -40,23 +36,40 @@
     bottom: -2px;
     right: -2px;
     background: linear-gradient(-45deg, $color-primary-hovered, $color-primary);
-    z-index: -1;
+    z-index: 0;
     border-radius: 0.75rem;
     transition: 300ms;
     // animation: colorChanger 10s ease-in-out infinite;
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
+  .cardDesign {
+    width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.075);
-    pointer-events: none;
-    border-top-left-radius: 0.75rem;
-    border-bottom-left-radius: 0.75rem;
+    padding: 1.5rem 0.25rem;
+    background-color: #060c21;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #000;
+    border-radius: 0.75rem;
+    color: #fff;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.075);
+      pointer-events: none;
+      border-top-left-radius: 0.75rem;
+      border-bottom-left-radius: 0.75rem;
+    }
   }
 
   .imageContainer {

@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.GameInfo {
+.Story {
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -310,7 +310,7 @@
 }
 
 @media (min-width: 1024px) {
-  .GameInfo {
+  .Story {
     .infoContainer {
       width: 500px;
       padding: 2.5rem;

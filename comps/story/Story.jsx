@@ -2,9 +2,9 @@ import Image from "next/image";
 import { FaHeart, FaBeer, FaSun, FaMoon, FaFan } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import styles from "./gameInfo.module.scss";
+import styles from "./story.module.scss";
 
-function GameInfo() {
+function Story() {
   const [firstCardRef, firstCardInView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
@@ -21,7 +21,7 @@ function GameInfo() {
   });
 
   return (
-    <section className={styles.GameInfo} id="theGame">
+    <section className={styles.Story} id="story">
       <div className={styles.topContainer}>
         <Image
           src="/images/game/game-1.jpg"
@@ -121,4 +121,4 @@ function GameInfo() {
   );
 }
 
-export default GameInfo;
+export default Story;

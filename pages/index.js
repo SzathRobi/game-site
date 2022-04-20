@@ -8,9 +8,10 @@ import Header from "../comps/header/Header";
 //import CharactersSlider from "../comps/charactersSlider/CharactersSlider";
 import Team from "../comps/team/Team";
 import Partners from "../comps/partners/Partners";
-import GameInfo from "../comps/gameInfo/GameInfo";
+import Story from "../comps/story/Story";
 import Tokemonics from "../comps/tokemonics/Tokemonics";
 import Roadmap from "../comps/roadmap/Roadmap";
+import Whitepaper from "../comps/whitepaper/Whitepaper";
 
 function Home({ buildTimestamp }) {
   //console.log({ buildTimestamp });
@@ -45,11 +46,11 @@ function Home({ buildTimestamp }) {
       <Header page="home" />
       <div className={styles.main}>
         <Landing offsetY={offsetY} />
-        <GameInfo />
+        <Story />
         <Tokemonics />
         <Partners />
-        <Team />
         <Roadmap />
+        <Whitepaper />
         {/*<CharactersSlider />
 
         <Timeline offsetY={offsetY} />

@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+
+.Whitepaper {
+  width: 110%;
+  height: 12rem;
+  margin: 0 0 15rem;
+  position: relative;
+  left: -5%;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(3deg);
+  overflow: hidden;
+  box-shadow: inset 6px 6px 6px rgba(0, 0, 0, 0.75),
+    inset -3px -3px 3px rgba(0, 0, 0, 0.5);
+
+  .anchorPoint {
+    transform: translateY(-18rem);
+  }
+
+  a {
+    border: none;
+    border-radius: 0.5rem;
+    transform: rotate(-3deg);
+    color: #fff;
+    background-color: $color-primary;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 200ms;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      bottom: 2px;
+      width: 50%;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    &:focus {
+      box-shadow: 0 0 20px $color-primary;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .Whitepaper a:hover {
+    box-shadow: 0 0 20px $color-primary;
+  }
+}

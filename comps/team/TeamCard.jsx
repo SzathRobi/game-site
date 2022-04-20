@@ -16,20 +16,22 @@ function TeamCard({ teamMember }) {
   return (
     <div ref={ref} className={styles.TeamCard}>
       <div className={styles.decor} style={decorStyle}></div>
-      <div className={styles.imageContainer}>
-        <Image
-          src={teamMember.image}
-          layout="fill"
-          objectFit="cover"
-          alt={teamMember.name}
-        />
+      <div className={styles.cardDesign}>
+        <div className={styles.imageContainer}>
+          <Image
+            src={teamMember.image}
+            layout="fill"
+            objectFit="cover"
+            alt={teamMember.name}
+          />
+        </div>
+        <h4>Jane Smith Doe</h4>
+        <div className={styles.roleContainer}>
+          <FaPenNib />
+          <p>{teamMember.role}</p>
+        </div>
+        <p className={styles.bio}>{teamMember.bio}</p>
       </div>
-      <h4>Jane Smith Doe</h4>
-      <div className={styles.roleContainer}>
-        <FaPenNib />
-        <p>{teamMember.role}</p>
-      </div>
-      <p className={styles.bio}>{teamMember.bio}</p>
     </div>
   );
 }
