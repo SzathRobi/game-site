@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 import Hamburger from "./Hamburger";
 import styles from "./header.module.scss";
+import ScrollContext from "../../contexts/ScrollContext";
 
-function Header({ isScrolling = true }) {
+function Header() {
+  const { isScrolling } = useContext(ScrollContext);
   const [checked, setChecked] = useState(false);
   const mobileMenuPos = {
     transform: `translateX(${checked ? 0 : 15}rem)`,

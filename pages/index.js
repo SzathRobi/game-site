@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import Landing from "../comps/landing/Landing";
@@ -12,8 +12,10 @@ import Story from "../comps/story/Story";
 import Tokemonics from "../comps/tokemonics/Tokemonics";
 import Roadmap from "../comps/roadmap/Roadmap";
 import Whitepaper from "../comps/whitepaper/Whitepaper";
+import ScrollContext from "../contexts/ScrollContext";
 
 function Home({ buildTimestamp }) {
+  const { isScrolling, setIsScrolling } = useContext(ScrollContext);
   //console.log({ buildTimestamp });
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
@@ -27,7 +29,6 @@ function Home({ buildTimestamp }) {
   const [isPageBottom, setIsPageBottom] = useState(false);
 
   const [counter, setCounter] = useState(0);
-  const [isScrolling, setIsScrolling] = useState(true);
 
   let timeout = null;
 

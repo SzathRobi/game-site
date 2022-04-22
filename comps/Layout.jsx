@@ -1,12 +1,15 @@
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
+import ScrollContextWrapper from "../contexts/ScrollContextWrapper";
 
 export default function Layout({ children }) {
   return (
     <div>
-      <Header />
-      {children}
-      <Footer />
+      <ScrollContextWrapper>
+        <Header />
+        {children}
+        <Footer />
+      </ScrollContextWrapper>
     </div>
   );
 }
