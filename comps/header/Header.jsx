@@ -3,13 +3,18 @@ import Link from "next/link";
 import Hamburger from "./Hamburger";
 import styles from "./header.module.scss";
 
-function Header() {
+function Header({ isScrolling = true }) {
   const [checked, setChecked] = useState(false);
   const mobileMenuPos = {
     transform: `translateX(${checked ? 0 : 15}rem)`,
   };
+
+  const headerStyle = {
+    transition: "500ms",
+    opacity: isScrolling ? 1 : 0,
+  };
   return (
-    <header className={styles.Header}>
+    <header className={styles.Header} style={headerStyle}>
       <Hamburger checked={checked} setChecked={setChecked} />
       <nav style={mobileMenuPos}>
         <Link href="/">

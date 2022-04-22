@@ -6,7 +6,6 @@ import Header from "../comps/header/Header";
 function Team() {
   return (
     <section className={styles.Team} id="team">
-      <Header page="team" />
       <h1>Our Team</h1>
       <div className={styles.cardContainer}>
         {teamData &&

@@ -1,49 +1,34 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 import styles from "./landing.module.scss";
 import Title from "./Title";
 
-function Landing({ offsetY }) {
-  /*
-   *   RESPONSIVENESS :)
-   *   ADD INITIAL ANIMATON :(
-   *   ADD PARALLAX SHIT :)
-   */
-
+function Landing({ offsetY, isScrolling }) {
   const { ref, inView, entry } = useInView({
     threshold: 1,
   });
 
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      inView ? videoRef.current.stop() : videoRef.current.stop();
-    }
-  }, [inView]);
-
   const titleStyle = {
-    transform: `translateY(${offsetY * 0.8}px)`,
+    transform: `translateY(${offsetY * 0.6}px)`,
+    transition: "500ms",
+    opacity: isScrolling ? 1 : 0,
   };
 
   const btnsStyle = {
-    transform: `translate(-50%, ${offsetY * 0.5}px)`,
+    transform: `translate(-50%, ${offsetY * 0.3}px)`,
+    transition: "500ms",
+    opacity: isScrolling ? 1 : 0,
   };
 
-  const social_1style = {
-    transform: `translate(-50%, ${offsetY * 0.1}px)`,
-  };
-  const social_2style = {
-    transform: `translate(-50%, ${offsetY * 0.2}px)`,
-  };
-  const social_3style = {
-    transform: `translate(-50%, ${offsetY * 0.4}px)`,
-  };
-  const social_4style = {
-    transform: `translate(-50%, ${offsetY * 0.3}px)`,
+  const socialStyle = {
+    transform: `translate(-50%, ${offsetY * 0.01}px)`,
+    transition: "500ms",
+    opacity: isScrolling ? 1 : 0,
   };
 
   return (
@@ -70,22 +55,22 @@ function Landing({ offsetY }) {
           </Link>
           <div className={styles.socials}>
             <Link href="#">
-              <a style={social_1style}>
+              <a style={socialStyle}>
                 <FaFacebook />
               </a>
             </Link>
             <Link href="#">
-              <a style={social_2style}>
+              <a style={socialStyle}>
                 <FaYoutube />
               </a>
             </Link>
             <Link href="#">
-              <a style={social_3style}>
+              <a style={socialStyle}>
                 <FaTwitter />
               </a>
             </Link>
             <Link href="#">
-              <a style={social_4style}>
+              <a style={socialStyle}>
                 <FaInstagram />
               </a>
             </Link>
