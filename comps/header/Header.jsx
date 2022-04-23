@@ -8,7 +8,7 @@ function Header() {
   const { isScrolling, setIsScrolling } = useContext(ScrollContext);
   const [checked, setChecked] = useState(false);
   const mobileMenuPos = {
-    transform: `translateX(${checked ? 0 : 15}rem)`,
+    transform: `translateX(${checked && isScrolling ? 0 : 15}rem)`,
   };
 
   const headerStyle = {
@@ -74,7 +74,7 @@ function Header() {
             <span style={dStyle}>D</span>
           </div>
         </div>
-        DISTOPY
+        <span>DISTOPY</span>
       </h4>
       <nav style={mobileMenuPos}>
         <ul>
@@ -104,10 +104,10 @@ function Header() {
             </Link>
           </li>
         </ul>
+        <button disabled={!isScrolling} style={buttonStyle}>
+          <p>JOIN PRESALE</p>
+        </button>
       </nav>
-      <button disabled={!isScrolling} style={buttonStyle}>
-        <p>JOIN PRESALE</p>
-      </button>
       <div
         className={styles.fakeHamburger}
         onClick={() => setIsScrolling(true)}
