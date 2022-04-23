@@ -17,18 +17,24 @@ function Landing({ offsetY, isScrolling }) {
     transform: `translateY(${offsetY * 0.6}px)`,
     transition: "500ms",
     opacity: isScrolling ? 1 : 0,
+    position: "relative",
+    zIndex: isScrolling ? 1 : -1,
   };
 
   const btnsStyle = {
     transform: `translate(-50%, ${offsetY * 0.3}px)`,
     transition: "500ms",
     opacity: isScrolling ? 1 : 0,
+    position: "relative",
+    zIndex: isScrolling ? 1 : -1,
   };
 
   const socialStyle = {
     transform: `translate(-50%, ${offsetY * 0.01}px)`,
     transition: "500ms",
     opacity: isScrolling ? 1 : 0,
+    position: "relative",
+    zIndex: isScrolling ? 1 : -1,
   };
 
   return (
