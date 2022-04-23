@@ -66,7 +66,7 @@ function Header() {
   return (
     <header className={styles.Header} style={headerStyle}>
       <h4>
-        <div>
+        <div className={styles.linesContainer}>
           <div className={styles.logoLine} style={logoLine_1_position}></div>
           <div className={styles.logoLine} style={logoLine_2_position}></div>
           <div className={styles.logoLine} style={logoLine_3_position}></div>
