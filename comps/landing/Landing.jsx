@@ -6,8 +6,7 @@ import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 import styles from "./landing.module.scss";
 import Title from "./Title";
 
-function Landing({ offsetY }) {
-  let isScrolling = true;
+function Landing({ offsetY, isScrolling }) {
   const { ref, inView, entry } = useInView({
     threshold: 1,
   });
