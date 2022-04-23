@@ -17,10 +17,13 @@
   left: 0;
   z-index: 1000;
   background-color: transparent;
+  height: 3.5rem;
 
   h4 {
+    width: 0.5rem;
     position: relative;
-    left: 3rem;
+    left: 1rem;
+    top: -0.5rem;
     margin-left: 1.5rem;
     font-weight: 400;
     font-size: 1.25rem;
@@ -84,12 +87,16 @@
       .dContainer {
         overflow: hidden;
         height: 2rem;
+        position: absolute;
 
         span {
           position: relative;
           transition: 400ms;
         }
       }
+    }
+    & > span {
+      display: none;
     }
   }
 
@@ -107,6 +114,7 @@
 
     ul {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 1rem;
@@ -160,7 +168,7 @@
     border-radius: 6px;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     position: relative;
-    right: 5rem;
+    right: 0;
     z-index: 10;
     overflow: hidden;
     transition: 200ms;
@@ -212,10 +220,12 @@
 }
 
 .Hamburger {
-  position: relative;
+  position: absolute;
   cursor: pointer;
   display: none;
-  top: -0.5rem;
+  top: 0.75rem;
+  right: 1.5rem;
+
   .hamburgerLine {
     width: 2.5rem;
     height: 0.25rem;
@@ -251,7 +261,7 @@
   top: 50%;
   transform: translateY(-55%);
   right: 8rem;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -310,7 +320,6 @@
   }
   .Hamburger {
     float: right;
-    margin: 1rem;
     display: block;
   }
 }
@@ -323,6 +332,35 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    h4 {
+      width: auto;
+      top: 0;
+    }
+
+    h4 > div {
+      top: 0;
+    }
+
+    h4 > span {
+      display: block;
+    }
+
+    .dContainer {
+      background-color: red;
+      top: -1rem;
+    }
+
+    nav ul {
+      flex-direction: row;
+    }
+    button {
+      right: -5rem;
+    }
+  }
+
+  .fakeHamburger {
+    display: flex;
   }
 }
 
@@ -337,6 +375,9 @@
       background-color: rgba(41, 40, 69, 0.95);
       color: #fff;
       letter-spacing: 2px;
+    }
+    nav {
+      right: 40%;
     }
   }
 }
