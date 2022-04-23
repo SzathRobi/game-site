@@ -6,7 +6,8 @@ import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 import styles from "./landing.module.scss";
 import Title from "./Title";
 
-function Landing({ offsetY, isScrolling }) {
+function Landing({ offsetY }) {
+  let isScrolling = true;
   const { ref, inView, entry } = useInView({
     threshold: 1,
   });
@@ -51,7 +52,9 @@ function Landing({ offsetY, isScrolling }) {
         </h1>
         <div className={styles.btns} style={btnsStyle}>
           <Link href="#">
-            <a className={styles.presale}>JOIN PRESALE</a>
+            <a className={styles.presale}>
+              <span>JOIN PRESALE</span>
+            </a>
           </Link>
           <div className={styles.socials}>
             <Link href="#">

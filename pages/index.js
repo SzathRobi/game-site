@@ -45,7 +45,7 @@ function Home({ buildTimestamp }) {
   useEffect(() => {
     timeout = setTimeout(() => {
       setIsScrolling(false);
-    }, 3000);
+    }, 5000);
 
     return () => clearTimeout(timeout);
   }, [isScrolling]);
@@ -58,12 +58,6 @@ function Home({ buildTimestamp }) {
 
     return () => clearInterval(interval);
   }, []);
-
-  useEffect(() => {
-    if (counter % 3 === 0 && !isScrolling) {
-      //do magic
-    }
-  }, [counter]);
 
   return (
     <div className={styles.container}>
