@@ -69,7 +69,7 @@ function Home({ buildTimestamp }) {
 
       <div className={styles.main}>
         <Landing offsetY={offsetY} isScrolling={isScrolling} />
-        <Story />
+        <Story offsetY={offsetY} />
         {/* <Tokemonics />
         <Partners />*/}
         <Roadmap />

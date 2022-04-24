@@ -1,0 +1,51 @@
+.ScrollSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10rem 0 15rem;
+
+  .imageContainer {
+    width: 400px;
+    height: 400px;
+    position: relative;
+  }
+
+  .infoContainer {
+    position: relative;
+    top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 2.5rem;
+
+    .textContainer {
+      min-width: 200px;
+      transition: 400ms;
+      position: relative;
+    }
+
+    h5 {
+      transition: 400ms;
+    }
+
+    p {
+      font-size: 1rem;
+      // transform: translateY(-1.5rem);
+      transition: 400ms;
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .ScrollSection {
+    flex-direction: row;
+    margin: 10rem 0;
+
+    .infoContainer {
+      top: 0;
+    }
+  }
+}
