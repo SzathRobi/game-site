@@ -16,6 +16,12 @@ function Header() {
     backgroundColor: isScrolling ? "rgba(0, 0, 0, 0.5)" : "transparent",
   };
 
+  const logoDistopyStyle = {
+    position: "relative",
+    top: isScrolling ? "0" : "-4rem",
+    transition: "400ms",
+  };
+
   const linkStyle = {
     transition: "500ms",
     opacity: isScrolling ? 1 : 0,
@@ -45,18 +51,18 @@ function Header() {
   };
 
   const fakeHamburgerLine1Style = {
-    transform: isScrolling ? "translateX(12rem)" : "translateX(0)",
-    transition: "400ms",
+    transform: isScrolling ? "translateX(0)" : "translateX(12rem)",
+    transition: isScrolling ? "200ms" : "900ms",
   };
 
   const fakeHamburgerLine2Style = {
-    transform: isScrolling ? "translateX(12rem)" : "translateX(0)",
-    transition: "600ms",
+    transform: isScrolling ? "translateX(0)" : "translateX(12rem)",
+    transition: isScrolling ? "300ms" : "1000ms",
   };
 
   const fakeHamburgerLine3Style = {
-    transform: isScrolling ? "translateX(12rem)" : "translateX(0)",
-    transition: "800ms",
+    transform: isScrolling ? "translateX(0)" : "translateX(12rem)",
+    transition: isScrolling ? "400ms" : "1100ms",
   };
 
   const dStyle = {
@@ -74,7 +80,7 @@ function Header() {
             <span style={dStyle}>D</span>
           </div>
         </div>
-        <span>DISTOPY</span>
+        <span style={logoDistopyStyle}>DISTOPY</span>
       </h4>
       <nav style={mobileMenuPos}>
         <ul>
@@ -125,7 +131,12 @@ function Header() {
           style={fakeHamburgerLine3Style}
         ></div>
       </div>
-      <Hamburger checked={checked} setChecked={setChecked} />
+      <Hamburger
+        checked={checked}
+        setChecked={setChecked}
+        isScrolling={isScrolling}
+        setIsScrolling={setIsScrolling}
+      />
     </header>
   );
 }
