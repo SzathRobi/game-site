@@ -63,13 +63,15 @@
   }
 
   .presale {
-    min-width: 240px;
+    min-width: 280px;
     color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(41, 40, 69, 0.6);
     text-transform: uppercase;
     text-align: center;
-    font-family: "Arvo", serif;
     text-shadow: 0px 2px 4.75px rgba(0, 0, 0, 0.3);
-    background-color: rgba(41, 40, 69, 0.6);
+    font-size: 1.6rem;
+    font-family: "Arvo", serif;
+    font-weight: 400;
     border-radius: 6px;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     position: relative;
@@ -107,7 +109,6 @@
       padding: 0.5rem 1.25rem;
       position: relative;
       z-index: 1;
-      font-size: 1.5rem;
       background-color: rgba(41, 40, 69, 0.75);
       margin: 2px;
       letter-spacing: 1px;

@@ -138,15 +138,18 @@ function ScrollSection({ offsetY }) {
       <div className={styles.infoContainer}>
         <div ref={gearRef} className={styles.textContainer} style={gearStyle}>
           <h5>GEAR</h5>
-          <p style={gearSubTextStyle}>We did it!</p>
+          <p style={gearSubTextStyle}>Gear up your hero</p>
+          <p style={gearSubTextStyle}>Take some Food & Ammo</p>
         </div>
         <div ref={fightRef} className={styles.textContainer} style={fightStyle}>
           <h5>FIGHT</h5>
-          <p style={fightSubTextStyle}>Cool Yeah?</p>
+          <p style={fightSubTextStyle}>
+            Fight with your friends or alone against Gata&apos;aga{" "}
+          </p>
         </div>
         <div ref={earnRef} className={styles.textContainer} style={earnStyle}>
           <h5>EARN</h5>
-          <p style={earnSubTextStyle}>Or simply awesome?</p>
+          <p style={earnSubTextStyle}>Earn Dyseum token for reward </p>
         </div>
         <div
           ref={repeatRef}

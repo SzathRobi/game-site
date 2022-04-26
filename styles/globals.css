@@ -12,10 +12,10 @@ html {
 
 html,
 body {
-  font-family: "Space Mono", monospace;
   background-color: #1e1d32;
   color: #fff;
   overflow-x: hidden;
+  font-family: "Karla", sans-serif;
 }
 
 a {

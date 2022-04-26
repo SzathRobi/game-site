@@ -12,6 +12,9 @@
 .Header {
   padding: 1.25rem 0 1.5rem;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   position: fixed;
   top: 0;
   left: 0;
@@ -26,7 +29,7 @@
     top: -0.5rem;
     margin-left: 1.5rem;
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,6 +104,9 @@
     }
     & > span {
       display: none;
+      font-family: "Karla", sans-serif;
+      font-weight: 200;
+      letter-spacing: 2px;
     }
   }
 
@@ -127,8 +133,10 @@
 
     a {
       position: relative;
-      transition: 250ms;
       text-align: center;
+      font-family: "Karla", sans-serif;
+      font-weight: 300;
+      transition: 550ms;
 
       &:nth-of-type(2) {
         line-height: 1.25rem;
@@ -150,6 +158,10 @@
         transition: 250ms;
       }
 
+      &:hover {
+        font-weight: 500;
+      }
+
       &:hover::before {
         width: 100%;
       }
@@ -157,16 +169,18 @@
     span {
       font-size: 0.9rem;
       display: block;
+      transition: 250ms;
     }
   }
 
   button {
-    width: 11rem;
+    width: 10rem;
     height: 2rem;
     color: rgba(255, 255, 255, 0.8);
     text-transform: uppercase;
     text-align: center;
     font-family: "Arvo", serif;
+    font-weight: 400;
     text-shadow: 0px 2px 4.75px rgba(0, 0, 0, 0.3);
     background-color: rgba(41, 40, 69, 0.6);
     border-radius: 6px;
@@ -205,9 +219,10 @@
       align-items: center;
       justify-content: center;
       padding: 0.5rem;
+      padding-bottom: 0.6rem;
       position: relative;
       z-index: 1;
-      font-size: 1rem;
+      font-size: 0.8rem;
       background-color: rgba(41, 40, 69, 0.75);
       margin: 2px;
       letter-spacing: 1px;
@@ -281,7 +296,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 560px) {
   .Header {
     nav {
       font-size: 1.25rem;
@@ -331,9 +346,6 @@
 
 @media (min-width: 767px) {
   .Header {
-    background-color: rgba(0, 0, 0, 0.5);
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -359,12 +371,16 @@
       top: 0;
     }
 
+    nav {
+      right: 16.5rem;
+    }
+
     nav ul {
       flex-direction: row;
       gap: 1rem;
     }
     button {
-      right: -5rem;
+      right: 0;
     }
   }
 
@@ -387,6 +403,10 @@
     }
     nav {
       right: 40%;
+
+      button {
+        right: -3rem;
+      }
     }
   }
 }

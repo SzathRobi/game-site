@@ -28,13 +28,20 @@
     }
 
     h5 {
+      width: 320px;
       transition: 400ms;
+      font-size: 3rem;
+      font-family: "Karla", sans-serif;
+      font-weight: bold;
+      text-align: left;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.75);
     }
 
     p {
       font-size: 1rem;
       // transform: translateY(-1.5rem);
       transition: 400ms;
+      max-width: 320px;
     }
   }
 }
