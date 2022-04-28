@@ -6,11 +6,15 @@ import StoryInfoCard from "./StoryInfoCard";
 import ScrollSection from "./ScrollSection";
 import Characters from "./Characters";
 
-function Story({ offsetY }) {
+function Story({ offsetY, scrollSectionRef, progress }) {
   return (
     <section className={styles.Story} id="story">
       <StoryInfoCard />
-      <ScrollSection offsetY={offsetY} />
+      <ScrollSection
+        offsetY={offsetY}
+        scrollSectionRef={scrollSectionRef}
+        progress={progress}
+      />
       <Characters />
     </section>
   );

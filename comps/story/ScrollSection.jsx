@@ -2,21 +2,25 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./scrollSection.module.scss";
 
-function ScrollSection({ offsetY }) {
+function ScrollSection({ offsetY, scrollSectionRef, progress }) {
   const gearRef = useRef(null);
   const fightRef = useRef(null);
   const earnRef = useRef(null);
   const repeatRef = useRef(null);
+  //const scrollSectionRef = useRef(null);
 
   const [gearOffset, setGearOffset] = useState(null);
   const [fightOffset, setFightOffset] = useState(null);
   const [earnOffset, setEarnOffset] = useState(null);
   const [repeatOffset, setRepeatOffset] = useState(null);
+  // const [scrollSectionOffset, setScrollSectionOffset] = useState(null);
   useEffect(() => {
     setGearOffset(gearRef.current.getBoundingClientRect());
     setFightOffset(fightRef.current.getBoundingClientRect());
     setEarnOffset(earnRef.current.getBoundingClientRect());
     setRepeatOffset(repeatRef.current.getBoundingClientRect());
+    //setScrollSectionOffset(scrollSectionRef.current.getBoundingClientRect());
+    //console.log("offset:", scrollSectionOffset);
   }, []);
 
   const [gearPos, setGearPos] = useState(0);
@@ -77,46 +81,46 @@ function ScrollSection({ offsetY }) {
 
   useEffect(() => {
     if (gearOffset) {
-      if (gearOffset.top - offsetY > 350) {
+      if (progress == 0) {
         setGearPos(0);
         setGearSubTextPos(-1);
         setGearSubTextOpacity(0);
       }
-      if (gearOffset.top - offsetY < 350) {
+      if (progress < 25 && progress != 0) {
         setGearPos(-4);
         setGearSubTextPos(1);
         setGearSubTextOpacity(1);
       }
-      if (fightOffset.top - offsetY > 350) {
+      if (progress < 25) {
         setFightPos(0);
         setFightSubTextPos(-1);
         setFightSubTextOpacity(0);
       }
-      if (fightOffset.top - offsetY < 350) {
+      if (progress >= 25) {
         setGearSubTextPos(-1);
         setGearSubTextOpacity(0);
         setFightPos(-4);
         setFightSubTextPos(1);
         setFightSubTextOpacity(1);
       }
-      if (earnOffset.top - offsetY > 300) {
+      if (progress < 50) {
         setEarnPos(0);
         setEarnSubTextPos(-1);
         setEarnSubTextOpacity(0);
       }
-      if (earnOffset.top - offsetY < 300) {
+      if (progress >= 50) {
         setEarnPos(-4);
         setEarnSubTextPos(1);
         setEarnSubTextOpacity(1);
         setFightSubTextPos(-1);
         setFightSubTextOpacity(0);
       }
-      if (repeatOffset.top - offsetY > 300) {
+      if (progress < 75) {
         setRepeatPos(0);
         setRepeatSubTextPos(-1);
         setRepeatSubTextOpacity(0);
       }
-      if (repeatOffset.top - offsetY < 300) {
+      if (progress >= 75) {
         setRepeatPos(-4);
         setRepeatSubTextPos(1);
         setRepeatSubTextOpacity(1);
@@ -127,7 +131,7 @@ function ScrollSection({ offsetY }) {
   }, [offsetY]);
 
   return (
-    <section className={styles.ScrollSection}>
+    <section className={styles.ScrollSection} ref={scrollSectionRef}>
       <div className={styles.imageContainer}>
         <Image
           src="/images/characters/pokemon.svg"
@@ -135,6 +139,7 @@ function ScrollSection({ offsetY }) {
           alt="distopy character"
         />
       </div>
+      {/* <h2 id="output">{`Percentage scrolled: ${progress}%.`}</h2>*/}
       <div className={styles.infoContainer}>
         <div ref={gearRef} className={styles.textContainer} style={gearStyle}>
           <h5>GEAR</h5>

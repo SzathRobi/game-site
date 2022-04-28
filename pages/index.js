@@ -1,18 +1,14 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import Landing from "../comps/landing/Landing";
-import Header from "../comps/header/Header";
-//import Characters from "../comps/characters/Characters";
-//import Timeline from "../comps/timeline/Timeline";
-//import CharactersSlider from "../comps/charactersSlider/CharactersSlider";
-import Team from "../comps/team/Team";
-import Partners from "../comps/partners/Partners";
 import Story from "../comps/story/Story";
-import Tokemonics from "../comps/tokemonics/Tokemonics";
 import Roadmap from "../comps/roadmap/Roadmap";
 import Whitepaper from "../comps/whitepaper/Whitepaper";
 import ScrollContext from "../contexts/ScrollContext";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Home({ buildTimestamp }) {
   const { isScrolling, setIsScrolling } = useContext(ScrollContext);
@@ -59,6 +55,52 @@ function Home({ buildTimestamp }) {
     return () => clearInterval(interval);
   }, []);
 
+  /**
+   * if(scrollBarPos == textPos) {
+   *  scrollStopFakerContainer_POS = scrollBarPos - textPos
+   * }
+   */
+
+  const scrollSectionRef = useRef(null);
+  const [progress, setProgress] = useState(0);
+  const [tween, setTween] = useState(null);
+
+  const [isMobileview, setIsmobileView] = useState(false);
+  useEffect(() => {
+    setIsmobileView(
+      //add 32 to exact px match between getBoundingClientRect and browser
+      scrollSectionRef.current.getBoundingClientRect().width + 32 < 767
+    );
+  }, [offsetY]);
+
+  useEffect(() => {
+    if (tween) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+    let scrollTween = gsap.to(scrollSectionRef.current, {
+      ease: "none",
+      //backgroundColor: "#DAF7A6",
+      scrollTrigger: {
+        trigger: scrollSectionRef.current,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        refreshPriority: 1,
+        start: `top 20%`,
+        //start: `top 20%`,
+        end: "+=100%",
+        markers: false,
+        toggleActions: "play reset play reset",
+        onUpdate: (self) => {
+          let p = (self.progress * 100).toFixed(1);
+          setProgress(p);
+        },
+      },
+    });
+
+    setTween(scrollTween);
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -69,15 +111,15 @@ function Home({ buildTimestamp }) {
 
       <div className={styles.main}>
         <Landing offsetY={offsetY} isScrolling={isScrolling} />
-        <Story offsetY={offsetY} />
-        {/* <Tokemonics />
-        <Partners />*/}
-        <Roadmap />
-        <Whitepaper />
-        {/*<CharactersSlider />
-
-        <Timeline offsetY={offsetY} />
-  */}
+        <div className={styles.scrollStopFakerContainer}>
+          <Story
+            offsetY={offsetY}
+            scrollSectionRef={scrollSectionRef}
+            progress={progress}
+          />
+          <Roadmap />
+          <Whitepaper />
+        </div>
       </div>
     </div>
   );
