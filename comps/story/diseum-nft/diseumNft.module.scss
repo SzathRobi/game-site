@@ -1,13 +1,68 @@
 .DiseumNft {
   .dyseumSection {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+    //infoCard
+    & > div {
+      margin: 0;
+    }
   }
 
   .nftSection {
+    display: flex;
+    flex-direction: column;
   }
 
   .nftCards {
+    position: relative;
+    height: 500px;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    transform: scaleY(0.8);
+    border-radius: 0.5rem;
+    overflow: hidden;
+
     .cardColumn {
+      position: relative;
+      transition: 100ms;
+      top: 0;
+      &:nth-of-type(1),
+      &:nth-of-type(3) {
+        transform: translateY(-2.5%);
+      }
+      &:nth-of-type(2) {
+        transform: translateY(-20%);
+      }
       .nftCard {
+        position: relative;
+        width: 100px;
+        height: 40%;
+        border-radius: 0.5rem;
+
+        &:nth-of-type(2) {
+          margin: 0.5rem 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .DiseumNft {
+    padding: 2rem;
+    .dyseumSection {
+      justify-content: flex-start;
+    }
+    .nftSection {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+
+      .nftInfo {
+        transform: translate(2rem, 3rem);
       }
     }
   }
@@ -15,5 +70,25 @@
 
 @media (min-width: 1024px) {
   .DiseumNft {
+    padding: 4rem;
+    .dyseumSection {
+    }
+    .nftSection {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+
+      .nftCards {
+        height: 650px;
+
+        .nftCard {
+          width: 180px;
+        }
+      }
+
+      .nftInfo {
+        transform: translate(5rem, 3rem);
+      }
+    }
   }
 }

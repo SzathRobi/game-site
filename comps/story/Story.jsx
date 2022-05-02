@@ -16,7 +16,7 @@ function Story({ offsetY, scrollSectionRef, progress }) {
       />
       <Characters />
       <Lore />
-      <DiseumNft />
+      <DiseumNft offsetY={offsetY} />
     </section>
   );
 }

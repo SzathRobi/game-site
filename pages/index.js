@@ -3,8 +3,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import Landing from "../comps/landing/Landing";
 import Story from "../comps/story/Story";
-import Roadmap from "../comps/roadmap/Roadmap";
-import Whitepaper from "../comps/whitepaper/Whitepaper";
+//import Roadmap from "../comps/roadmap/Roadmap";
 import ScrollContext from "../contexts/ScrollContext";
 
 import { gsap } from "gsap";
@@ -117,8 +116,6 @@ function Home({ buildTimestamp }) {
             scrollSectionRef={scrollSectionRef}
             progress={progress}
           />
-          <Roadmap />
-          <Whitepaper />
         </div>
       </div>
     </div>
