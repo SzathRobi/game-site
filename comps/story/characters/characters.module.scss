@@ -1,0 +1,42 @@
+.Characters {
+  max-width: 1000px;
+  margin: 0 auto;
+  .description {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+    max-width: 37ch;
+  }
+
+  .charactersGrid {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 767px) {
+  .Characters {
+    .description {
+      font-size: 1.5rem;
+      padding-left: 1rem;
+    }
+
+    .charactersGrid {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .Characters {
+    .description {
+      font-size: 1.5rem;
+      font-weight: 200;
+      transform: translateX(10%);
+    }
+  }
+}

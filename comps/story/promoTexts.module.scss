@@ -1,0 +1,73 @@
+.PromoTexts {
+  width: 100%;
+  position: relative;
+  font-family: "Karla", sans-serif;
+  padding-left: 0.5rem;
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 200;
+    line-height: 1.75rem;
+  }
+
+  .container {
+    display: flex;
+    gap: 1rem;
+
+    .play {
+      font-size: 5rem;
+      font-weight: 400;
+    }
+
+    .subTitles {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      h6 {
+        font-weight: 200;
+        font-size: 0.9rem;
+      }
+
+      span {
+        font-size: 1.25rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .PromoTexts {
+    padding-left: 0rem;
+
+    .title {
+      font-size: 2.25rem;
+      margin: 0.5rem 0;
+    }
+
+    .container {
+      gap: 3rem;
+      .play {
+        font-size: 9rem;
+      }
+
+      .subTitles {
+        h6 {
+          font-size: 1.5rem;
+        }
+
+        span {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .PromoTexts {
+    padding-left: 10%;
+  }
+}

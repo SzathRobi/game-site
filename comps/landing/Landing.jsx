@@ -1,90 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "react-intersection-observer";
-import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 import styles from "./landing.module.scss";
-import Title from "./Title";
 
 function Landing({ offsetY, isScrolling }) {
-  const { ref, inView, entry } = useInView({
-    threshold: 1,
-  });
-
-  const videoRef = useRef(null);
-
   const titleStyle = {
-    transform: `translateY(${offsetY * 0.6}px)`,
-    transition: "500ms",
-    opacity: isScrolling ? 1 : 0,
-    position: "relative",
-    zIndex: isScrolling ? 1 : -1,
-  };
-
-  const btnsStyle = {
-    transform: `translate(-50%, ${offsetY * 0.3}px)`,
-    transition: "500ms",
-    opacity: isScrolling ? 1 : 0,
-    position: "relative",
-    zIndex: isScrolling ? 1 : -1,
-  };
-
-  const socialStyle = {
-    transform: `translate(-50%, ${offsetY * 0.01}px)`,
-    transition: "500ms",
-    opacity: isScrolling ? 1 : 0,
-    position: "relative",
-    zIndex: isScrolling ? 1 : -1,
+    top: `calc(50vh + ${offsetY * 0.2}px)`,
+    opacity: isScrolling ? 0.6 : 0,
+    zIndex: isScrolling ? 2 : -1,
   };
 
   return (
     <section className={styles.Landing} id="Landing">
-      {/*<video ref={ref} muted id="videoBG">
-        <source src="./bg.mp4" type="video/mp4" />
-  </video>*/}
       <Image
         src="/bg-min.jpg"
         layout="fill"
         objectFit="cover"
         objectPosition="left"
-        alt="game bg"
+        alt="Distopy character in a fantasy world"
         className={styles.bgImg}
         //priority
       />
-      <div className={styles.container}>
-        <h1>
-          <Title style={titleStyle} />
-        </h1>
-        <div className={styles.btns} style={btnsStyle}>
-          <Link href="#">
-            <a className={styles.presale}>
-              <span>JOIN PRESALE</span>
-            </a>
-          </Link>
-          <div className={styles.socials}>
-            <Link href="#">
-              <a style={socialStyle}>
-                <FaFacebook />
-              </a>
-            </Link>
-            <Link href="#">
-              <a style={socialStyle}>
-                <FaYoutube />
-              </a>
-            </Link>
-            <Link href="#">
-              <a style={socialStyle}>
-                <FaTwitter />
-              </a>
-            </Link>
-            <Link href="#">
-              <a style={socialStyle}>
-                <FaInstagram />
-              </a>
-            </Link>
-          </div>
-        </div>
-      </div>
+      <h1 style={titleStyle}>DISTOPY</h1>
     </section>
   );
 }

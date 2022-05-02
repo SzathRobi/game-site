@@ -7,3 +7,9 @@
   position: relative;
   overflow: hidden;
 }
+
+@media (min-width: 767px) {
+  .Story {
+    padding: 10rem 5rem;
+  }
+}

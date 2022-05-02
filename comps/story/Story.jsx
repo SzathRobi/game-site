@@ -1,21 +1,22 @@
-import Image from "next/image";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
 import styles from "./story.module.scss";
-import StoryInfoCard from "./StoryInfoCard";
 import ScrollSection from "./ScrollSection";
-import Characters from "./Characters";
+import Characters from "./characters/Characters";
+import PromoTexts from "./PromoTexts";
+import Lore from "./lore/Lore";
+import DiseumNft from "./diseum-nft/DiseumNft";
 
 function Story({ offsetY, scrollSectionRef, progress }) {
   return (
     <section className={styles.Story} id="story">
-      <StoryInfoCard />
+      <PromoTexts />
       <ScrollSection
         offsetY={offsetY}
         scrollSectionRef={scrollSectionRef}
         progress={progress}
       />
       <Characters />
+      <Lore />
+      <DiseumNft />
     </section>
   );
 }
